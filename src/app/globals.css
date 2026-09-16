@@ -1,26 +1,153 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ink: #0b0e12;
+  --steel: #8b9aaa;
+  --paper: #e8eef2;
+  --cyan: #1ba3c6;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ink: #0b0e12;
+  --color-steel: #8b9aaa;
+  --color-paper: #e8eef2;
+  --color-cyan: #1ba3c6;
+  --font-sans: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html {
+  background: #0b0e12;
+  color: #e8eef2;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #0b0e12;
+  color: #e8eef2;
+  font-family: var(--font-sans);
+  min-height: 100%;
+}
+
+::selection {
+  background: #1ba3c6;
+  color: #0b0e12;
+}
+
+:focus-visible {
+  outline: 1px solid #1ba3c6;
+  outline-offset: 3px;
+}
+
+.blueprint {
+  background-color: #0b0e12;
+  background-image:
+    linear-gradient(rgba(139, 154, 170, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 154, 170, 0.07) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.film-gradient {
+  background:
+    linear-gradient(to top, rgba(11, 14, 18, 0.97) 0%, rgba(11, 14, 18, 0.62) 38%, rgba(11, 14, 18, 0.22) 100%),
+    linear-gradient(to right, rgba(11, 14, 18, 0.55) 0%, rgba(11, 14, 18, 0.12) 48%, rgba(11, 14, 18, 0.08) 100%);
+}
+
+.rise {
+  animation: rise 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.rise-delay-1 {
+  animation-delay: 120ms;
+}
+.rise-delay-2 {
+  animation-delay: 220ms;
+}
+.rise-delay-3 {
+  animation-delay: 340ms;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise,
+  .rise-delay-1,
+  .rise-delay-2,
+  .rise-delay-3 {
+    animation: none;
+  }
+}
+
+.hero-pan {
+  animation: hero-pan 28s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+@keyframes hero-pan {
+  from {
+    object-position: 8% center;
+    transform: scale(1.08);
+  }
+  to {
+    object-position: 92% center;
+    transform: scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-pan {
+    animation: none;
+    transform: none;
+    object-position: center;
+  }
+}
+
+.label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #8b9aaa;
+}
+
+.field {
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgb(255 255 255 / 0.12);
+  color: #e8eef2;
+  padding: 0.8rem 0.9rem;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.field:focus {
+  border-color: #1ba3c6;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Acquire Build
 
-## Getting Started
+Studio site for [acquirebuild.com](https://acquirebuild.com).
 
-First, run the development server:
+I build the software and hardware assets an operator can sell from.
+
+## Stack
+
+Next.js App Router, TypeScript, Tailwind v4. Deployed on Vercel.
+
+## Local
 
 ```bash
+npm install
+cp .env.example .env.local
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Lead form
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+`POST /api/lead` validates the brief and returns a success state.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+If `RESEND_API_KEY` and `LEADS_TO` are set, it emails the brief. If they are not set, the request is accepted and logged. The client falls back to mailto on network failure.
 
-## Learn More
+## Case studies
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Work cards are asset-class frames until real cases are dropped in. Search `TODO` for those placeholders.
