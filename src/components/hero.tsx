@@ -8,7 +8,7 @@ export function Hero() {
       <div className="absolute inset-0">
         <Image
           src="/images/hero.jpg"
-          alt="Sensor mast, exploded circuit board, and a client login with live feed."
+          alt="Client login and live feed in a dark industrial bay."
           fill
           priority
           sizes="100vw"

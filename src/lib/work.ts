@@ -18,10 +18,10 @@ export const work: WorkItem[] = [
   },
   {
     slug: "mast-app",
-    category: "Hardware-linked",
-    title: "Mast and the operator phone",
+    category: "Software",
+    title: "Feed on the phone",
     summary:
-      "PTZ head on the bench. App on the steel. Pan, tilt, and the live path sit in one account.",
+      "The live interior on a phone. Sign in. See the site. The feed sits in one account.",
     image: "/images/work-mobile.jpg",
   },
   {

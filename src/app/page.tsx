@@ -149,8 +149,8 @@ export default function HomePage() {
             </p>
             <div className="relative mt-10 hidden aspect-[16/10] overflow-hidden lg:block">
               <Image
-                src="/images/tile-hardware.jpg"
-                alt="Solar surveillance mast in a dark industrial yard."
+                src="/images/work-login.jpg"
+                alt="Client login over a live industrial feed."
                 fill
                 sizes="40vw"
                 className="object-cover"

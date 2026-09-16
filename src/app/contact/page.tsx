@@ -33,7 +33,7 @@ export default function ContactPage() {
         <div className="relative mt-10 aspect-[16/11] overflow-hidden">
           <Image
             src="/images/approach.jpg"
-            alt="Sensor to login. The joint."
+            alt="Mast to login. The joint."
             fill
             sizes="(min-width: 1024px) 40vw, 100vw"
             className="object-cover"

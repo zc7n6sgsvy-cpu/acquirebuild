@@ -25,7 +25,7 @@ export default function ApproachPage() {
       <section className="relative min-h-[52vh] overflow-hidden border-y border-white/10 md:min-h-[58vw]">
         <Image
           src="/images/approach.jpg"
-          alt="A sensor camera connected by a cyan optical path to a login and live-feed stack."
+          alt="A solar mast connected by a cyan path to a login and live-feed stack."
           fill
           sizes="100vw"
           priority
