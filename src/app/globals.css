@@ -23,6 +23,11 @@ html {
   scroll-behavior: smooth;
 }
 
+.viewport-fill {
+  min-height: 100svh;
+  min-height: 100dvh;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -58,6 +63,18 @@ body {
   background:
     linear-gradient(to top, rgba(11, 14, 18, 0.97) 0%, rgba(11, 14, 18, 0.62) 38%, rgba(11, 14, 18, 0.22) 100%),
     linear-gradient(to right, rgba(11, 14, 18, 0.55) 0%, rgba(11, 14, 18, 0.12) 48%, rgba(11, 14, 18, 0.08) 100%);
+}
+
+@media (max-width: 639px) {
+  .film-gradient {
+    background: linear-gradient(
+      to top,
+      #0b0e12 0%,
+      rgba(11, 14, 18, 0.94) 42%,
+      rgba(11, 14, 18, 0.55) 72%,
+      rgba(11, 14, 18, 0.22) 100%
+    );
+  }
 }
 
 .rise {
@@ -168,7 +185,7 @@ html[data-intro="done"] .hero-copy {
   border: 1px solid rgb(255 255 255 / 0.12);
   color: #e8eef2;
   padding: 0.8rem 0.9rem;
-  font-size: 0.95rem;
+  font-size: 16px;
   outline: none;
 }
 

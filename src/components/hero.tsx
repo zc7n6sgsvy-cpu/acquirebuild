@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[100svh] overflow-hidden">
+    <section className="viewport-fill relative overflow-hidden">
       <div className="absolute inset-0">
         <Image
           src="/images/hero.jpg"
@@ -12,10 +12,10 @@ export function Hero() {
           fill
           priority
           sizes="100vw"
-          className="hero-pan object-cover"
+          className="hero-pan object-cover object-[center_28%] sm:object-center"
         />
         <video
-          className="absolute inset-0 hidden h-full w-full object-cover motion-safe:block"
+          className="absolute inset-0 hidden h-full w-full object-cover object-[center_28%] motion-safe:block sm:object-center"
           autoPlay
           muted
           loop
@@ -28,7 +28,7 @@ export function Hero() {
         </video>
       </div>
       <div className="film-gradient absolute inset-0" />
-      <div className="hero-copy relative mx-auto flex min-h-[100svh] max-w-[1280px] flex-col justify-end px-5 pb-16 pt-28 sm:px-8 sm:pb-20">
+      <div className="hero-copy viewport-fill relative mx-auto flex max-w-[1280px] flex-col justify-end px-5 pt-28 pb-[max(4rem,env(safe-area-inset-bottom))] sm:px-8 sm:pb-20">
         <p className="font-sans text-[11px] tracking-[0.28em] text-steel uppercase">
           Acquire Build
         </p>

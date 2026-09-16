@@ -4,7 +4,7 @@ import { nav, site } from "@/lib/site";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-white/10">
+    <footer className="border-t border-white/10 pb-[env(safe-area-inset-bottom)]">
       <div className="mx-auto grid max-w-[1280px] gap-10 px-5 py-14 sm:px-8 md:grid-cols-[1.4fr_1fr]">
         <div>
           <Mark size={64} href="/" />

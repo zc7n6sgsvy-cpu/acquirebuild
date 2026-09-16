@@ -128,7 +128,7 @@ export function LeadForm() {
           {layers.map((layer) => (
             <label
               key={layer.value}
-              className="flex cursor-pointer items-center justify-center border border-white/10 px-2 py-3 text-[12px] tracking-[0.14em] text-steel uppercase has-[:checked]:border-cyan has-[:checked]:text-paper"
+              className="flex min-h-11 cursor-pointer items-center justify-center border border-white/10 px-1 py-3 text-[11px] tracking-[0.08em] text-steel uppercase has-[:checked]:border-cyan has-[:checked]:text-paper sm:px-2 sm:text-[12px] sm:tracking-[0.14em]"
             >
               <input
                 type="radio"

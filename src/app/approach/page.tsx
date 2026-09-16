@@ -32,9 +32,9 @@ export default function ApproachPage() {
           className="object-cover"
         />
         <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink via-ink/50 to-transparent p-5 sm:p-8">
-          <div className="mx-auto grid max-w-[1280px] gap-2 sm:grid-cols-2">
+          <div className="mx-auto grid max-w-[1280px] grid-cols-2 gap-2">
             <p className="text-[11px] tracking-[0.18em] text-steel uppercase">Hardware</p>
-            <p className="text-[11px] tracking-[0.18em] text-steel uppercase sm:text-right">
+            <p className="text-right text-[11px] tracking-[0.18em] text-steel uppercase">
               Software
             </p>
           </div>

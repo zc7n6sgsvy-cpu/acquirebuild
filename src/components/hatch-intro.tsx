@@ -49,7 +49,7 @@ export function HatchIntro({ onComplete }: { onComplete: () => void }) {
         <source src="/images/intro.mp4" type="video/mp4" />
       </video>
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-ink/80 to-transparent" />
-      <p className="absolute bottom-8 left-6 font-sans text-[11px] tracking-[0.32em] text-steel uppercase sm:left-8">
+      <p className="absolute bottom-[max(1.5rem,env(safe-area-inset-bottom))] left-6 font-sans text-[11px] tracking-[0.32em] text-steel uppercase sm:left-8">
         Acquire Build
       </p>
       <button
@@ -60,7 +60,7 @@ export function HatchIntro({ onComplete }: { onComplete: () => void }) {
           setExiting(true);
           window.setTimeout(onComplete, 900);
         }}
-        className="absolute right-6 bottom-8 border border-white/20 px-4 py-2 font-sans text-[11px] tracking-[0.22em] text-paper uppercase transition-colors hover:border-cyan hover:bg-cyan/10 sm:right-8"
+        className="absolute right-6 bottom-[max(1.5rem,env(safe-area-inset-bottom))] min-h-11 border border-white/20 px-4 py-2 font-sans text-[11px] tracking-[0.22em] text-paper uppercase transition-colors hover:border-cyan hover:bg-cyan/10 sm:right-8"
       >
         Enter
       </button>
