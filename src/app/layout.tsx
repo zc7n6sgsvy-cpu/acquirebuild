@@ -35,6 +35,8 @@ export const metadata: Metadata = {
     "hardware-linked software",
     "device to account",
     "operator software",
+    "AI workflows",
+    "practice workflow",
   ],
   authors: [{ name: "Acquire Build", url: site.url }],
   openGraph: {

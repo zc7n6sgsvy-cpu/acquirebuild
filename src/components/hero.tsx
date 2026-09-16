@@ -28,17 +28,17 @@ export function Hero() {
         </video>
       </div>
       <div className="film-gradient absolute inset-0" />
-      <div className="relative mx-auto flex min-h-[100svh] max-w-[1280px] flex-col justify-end px-5 pb-16 pt-28 sm:px-8 sm:pb-20">
-        <p className="rise font-sans text-[11px] tracking-[0.28em] text-steel uppercase">
+      <div className="hero-copy relative mx-auto flex min-h-[100svh] max-w-[1280px] flex-col justify-end px-5 pb-16 pt-28 sm:px-8 sm:pb-20">
+        <p className="font-sans text-[11px] tracking-[0.28em] text-steel uppercase">
           Acquire Build
         </p>
-        <h1 className="rise rise-delay-1 mt-5 max-w-4xl font-display text-[2.5rem] leading-[0.95] font-semibold tracking-tight text-paper sm:text-6xl lg:text-[4.6rem]">
+        <h1 className="mt-5 max-w-4xl font-display text-[2.5rem] leading-[0.95] font-semibold tracking-tight text-paper sm:text-6xl lg:text-[4.6rem]">
           {site.line}
         </h1>
-        <p className="rise rise-delay-2 mt-6 max-w-xl text-base leading-relaxed text-steel sm:text-lg">
+        <p className="mt-6 max-w-xl text-base leading-relaxed text-steel sm:text-lg">
           {site.secondary}
         </p>
-        <div className="rise rise-delay-3 mt-10 flex flex-wrap items-center gap-4">
+        <div className="mt-10 flex flex-wrap items-center gap-4">
           <Link
             href="/contact"
             className="border border-cyan bg-cyan/10 px-5 py-3 text-[12px] tracking-[0.18em] text-paper uppercase transition-colors hover:bg-cyan/20"

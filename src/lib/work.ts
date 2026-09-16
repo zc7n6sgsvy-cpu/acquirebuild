@@ -1,6 +1,6 @@
 export type WorkItem = {
   slug: string;
-  category: "Market" | "Software" | "Hardware-linked";
+  category: "Market" | "Software" | "Hardware-linked" | "Workflow";
   title: string;
   summary: string;
   image: string;
@@ -23,6 +23,14 @@ export const work: WorkItem[] = [
     summary:
       "PTZ head on the bench. App on the steel. Pan, tilt, and the live path sit in one account.",
     image: "/images/work-mobile.jpg",
+  },
+  {
+    slug: "practice-path",
+    category: "Workflow",
+    title: "Intake to account",
+    summary:
+      "A brief as a steel plate. Route. Draft. The login that holds the matter. The path a practice can see.",
+    image: "/images/work-intake.jpg",
   },
   {
     slug: "api-nodes",
@@ -79,6 +87,13 @@ export const assetClasses = [
     title: "Mast, sensor, board",
     image: "/images/tile-hardware.jpg",
     copy: "Masts, sensors, boards, and the account they report to. I wire the physical unit to a login, a feed, and an offer so the device is not a box. It is a product an operator can sell.",
+  },
+  {
+    key: "workflow",
+    label: "Workflow",
+    title: "Intake, route, account",
+    image: "/images/tile-workflow.jpg",
+    copy: "The path a practice runs. Document in, work routed, draft in the account that holds the matter. Built so the operator can see the path. Not a black box.",
   },
 ] as const;
 

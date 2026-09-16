@@ -1,17 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Hero } from "@/components/hero";
+import { HomeExperience } from "@/components/home-experience";
 import { LeadForm } from "@/components/lead-form";
 import { FilmStill } from "@/components/film-still";
+import { WorkflowSection } from "@/components/workflow-section";
 import { assetClasses, processSteps, work } from "@/lib/work";
 
 export default function HomePage() {
   return (
-    <>
+    <HomeExperience>
       <Hero />
 
       <section className="border-y border-white/10">
-        <div className="mx-auto grid max-w-[1280px] divide-y divide-white/10 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+        <div className="mx-auto grid max-w-[1280px] divide-y divide-white/10 sm:grid-cols-2 lg:grid-cols-4 sm:divide-x sm:divide-y-0">
           {[
             {
               k: "Software products",
@@ -25,6 +27,10 @@ export default function HomePage() {
               k: "Market assets",
               v: "Sites and offers that sell the unit.",
             },
+            {
+              k: "Workflows",
+              v: "Intake, routing, the account a practice runs from.",
+            },
           ].map((item) => (
             <div key={item.k} className="px-5 py-8 sm:px-8">
               <p className="text-[11px] tracking-[0.22em] text-cyan uppercase">{item.k}</p>
@@ -37,9 +43,9 @@ export default function HomePage() {
       <section className="mx-auto max-w-[1280px] px-5 py-20 sm:px-8 sm:py-28">
         <p className="text-[11px] tracking-[0.22em] text-steel uppercase">Asset classes</p>
         <h2 className="mt-4 max-w-2xl font-display text-4xl leading-[0.95] font-semibold tracking-tight sm:text-5xl">
-          Three layers. One owner.
+          Four layers. One owner.
         </h2>
-        <div className="mt-14 grid gap-10 lg:grid-cols-3">
+        <div className="mt-14 grid gap-10 sm:grid-cols-2">
           {assetClasses.map((asset) => (
             <article key={asset.key} className="group">
               <FilmStill
@@ -98,6 +104,8 @@ export default function HomePage() {
         </div>
       </section>
 
+      <WorkflowSection />
+
       <section className="blueprint border-t border-white/10">
         <div className="mx-auto grid max-w-[1280px] items-center gap-12 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-2">
           <div>
@@ -152,6 +160,6 @@ export default function HomePage() {
           <LeadForm />
         </div>
       </section>
-    </>
+    </HomeExperience>
   );
 }

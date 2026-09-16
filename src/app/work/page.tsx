@@ -5,7 +5,7 @@ import { work } from "@/lib/work";
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "Asset types from Acquire Build. Logins, feeds, APIs, sites, masts, and the joints that bind them.",
+    "Asset types from Acquire Build. Logins, feeds, APIs, sites, masts, workflows, and the joints that bind them.",
   alternates: { canonical: "/work" },
 };
 
