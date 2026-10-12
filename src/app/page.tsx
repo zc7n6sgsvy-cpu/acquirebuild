@@ -6,7 +6,7 @@ import { LeadForm } from "@/components/lead-form";
 import { FilmStill } from "@/components/film-still";
 import { WorkCard } from "@/components/work-card";
 import { WorkflowSection } from "@/components/workflow-section";
-import { assetClasses, caseHref, processSteps, work } from "@/lib/work";
+import { assetClasses, caseHref, processSteps, work, workInClass } from "@/lib/work";
 
 export default function HomePage() {
   return (
@@ -47,9 +47,10 @@ export default function HomePage() {
           Four layers. One owner.
         </h2>
         <div className="mt-14 grid gap-10 sm:grid-cols-2">
-          {assetClasses.map((asset) => (
-            <article key={asset.key}>
-              <Link href={`/work?class=${asset.key}`} className="group block">
+          {assetClasses.map((asset) => {
+            const layer = workInClass(asset.key);
+            const body = (
+              <>
                 <FilmStill
                   src={asset.image}
                   alt=""
@@ -60,12 +61,25 @@ export default function HomePage() {
                 <p className="mt-5 text-[11px] tracking-[0.2em] text-cyan uppercase">{asset.label}</p>
                 <h3 className="mt-2 font-display text-3xl font-medium tracking-tight">{asset.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-steel">{asset.copy}</p>
-                <p className="mt-4 text-[11px] tracking-[0.18em] text-steel uppercase transition-colors group-hover:text-cyan">
-                  View this layer
-                </p>
-              </Link>
-            </article>
-          ))}
+                {layer.length > 0 ? (
+                  <p className="mt-4 text-[11px] tracking-[0.18em] text-steel uppercase transition-colors group-hover:text-cyan">
+                    View this layer
+                  </p>
+                ) : null}
+              </>
+            );
+            return (
+              <article key={asset.key}>
+                {layer.length > 0 ? (
+                  <Link href={`/work?class=${asset.key}`} className="group block">
+                    {body}
+                  </Link>
+                ) : (
+                  body
+                )}
+              </article>
+            );
+          })}
         </div>
       </section>
 
@@ -86,7 +100,9 @@ export default function HomePage() {
             </Link>
           </div>
           <p className="mt-4 max-w-md text-sm leading-relaxed text-steel">
-            Open a file. Previous and next carry you through the set.
+            {work.length > 1
+              ? "Open a file. Previous and next carry you through the set."
+              : "One piece so far. Open the file, or view the live site."}
           </p>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {work.slice(0, 6).map((item) => (

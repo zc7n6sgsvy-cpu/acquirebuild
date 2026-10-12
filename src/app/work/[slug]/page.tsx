@@ -57,9 +57,13 @@ export default async function WorkCasePage({
         >
           ← {walk.backLabel}
         </Link>
-        <p className="font-mono text-[11px] tracking-[0.16em] text-steel">
-          {String(walk.index).padStart(2, "0")} / {String(walk.total).padStart(2, "0")}
-        </p>
+        {walk.total > 1 ? (
+          <p className="font-mono text-[11px] tracking-[0.16em] text-steel">
+            {String(walk.index).padStart(2, "0")} / {String(walk.total).padStart(2, "0")}
+          </p>
+        ) : (
+          <span />
+        )}
       </div>
 
       <p className="mt-10 text-[11px] tracking-[0.22em] text-cyan uppercase">{item.category}</p>
@@ -110,25 +114,27 @@ export default async function WorkCasePage({
         ))}
       </ol>
 
-      <nav aria-label="Continue through the portfolio" className="mt-16 grid border-y border-white/10 sm:grid-cols-2">
-        <Link
-          href={walk.prev.href}
-          className="group border-b border-white/10 py-8 sm:border-r sm:border-b-0 sm:pr-8"
-        >
-          <p className="text-[11px] tracking-[0.18em] text-steel uppercase">Previous</p>
-          <p className="mt-3 font-display text-3xl font-medium tracking-tight transition-colors group-hover:text-cyan">
-            {walk.prev.title}
-          </p>
-        </Link>
-        <Link href={walk.next.href} className="group py-8 sm:pl-8 sm:text-right">
-          <p className="text-[11px] tracking-[0.18em] text-steel uppercase">Next</p>
-          <p className="mt-3 font-display text-3xl font-medium tracking-tight transition-colors group-hover:text-cyan">
-            {walk.next.title}
-          </p>
-        </Link>
-      </nav>
+      {walk.total > 1 ? (
+        <nav aria-label="Continue through the portfolio" className="mt-16 grid border-y border-white/10 sm:grid-cols-2">
+          <Link
+            href={walk.prev.href}
+            className="group border-b border-white/10 py-8 sm:border-r sm:border-b-0 sm:pr-8"
+          >
+            <p className="text-[11px] tracking-[0.18em] text-steel uppercase">Previous</p>
+            <p className="mt-3 font-display text-3xl font-medium tracking-tight transition-colors group-hover:text-cyan">
+              {walk.prev.title}
+            </p>
+          </Link>
+          <Link href={walk.next.href} className="group py-8 sm:pl-8 sm:text-right">
+            <p className="text-[11px] tracking-[0.18em] text-steel uppercase">Next</p>
+            <p className="mt-3 font-display text-3xl font-medium tracking-tight transition-colors group-hover:text-cyan">
+              {walk.next.title}
+            </p>
+          </Link>
+        </nav>
+      ) : null}
 
-      {walk.solo ? (
+      {walk.solo && walk.total > 1 ? (
         <p className="mt-6 text-sm leading-relaxed text-steel">
           One file in {walk.layerLabel}. Previous and next return to the full set.
         </p>
