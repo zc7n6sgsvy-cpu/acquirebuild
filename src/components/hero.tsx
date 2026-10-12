@@ -49,7 +49,7 @@ export function Hero() {
             href="/work"
             className="px-2 py-3 text-[12px] tracking-[0.18em] text-steel uppercase transition-colors hover:text-paper"
           >
-            See the work
+            See the portfolio
           </Link>
         </div>
         <div className="mt-12 h-px w-14 bg-cyan" aria-hidden />

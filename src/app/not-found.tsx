@@ -9,12 +9,20 @@ export default function NotFound() {
       <p className="mt-4 max-w-md text-sm leading-relaxed text-steel">
         The route does not exist. The work, the approach, and the form do.
       </p>
-      <Link
-        href="/"
-        className="mt-10 border border-cyan bg-cyan/10 px-5 py-3 text-[12px] tracking-[0.18em] text-paper uppercase hover:bg-cyan/20"
-      >
-        Home
-      </Link>
+      <div className="mt-10 flex flex-wrap items-center gap-6">
+        <Link
+          href="/"
+          className="border border-cyan bg-cyan/10 px-5 py-3 text-[12px] tracking-[0.18em] text-paper uppercase hover:bg-cyan/20"
+        >
+          Home
+        </Link>
+        <Link
+          href="/work"
+          className="text-[12px] tracking-[0.18em] text-steel uppercase hover:text-paper"
+        >
+          Portfolio
+        </Link>
+      </div>
     </div>
   );
 }

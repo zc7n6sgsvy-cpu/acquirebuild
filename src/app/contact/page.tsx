@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { LeadForm } from "@/components/lead-form";
 import { site } from "@/lib/site";
+import { getWork } from "@/lib/work";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -10,7 +12,15 @@ export const metadata: Metadata = {
   alternates: { canonical: "/contact" },
 };
 
-export default function ContactPage() {
+export default async function ContactPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ from?: string | string[] }>;
+}) {
+  const query = await searchParams;
+  const from = Array.isArray(query.from) ? query.from[0] : query.from;
+  const piece = from ? getWork(from) : undefined;
+
   return (
     <div className="mx-auto grid max-w-[1280px] gap-12 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-[1fr_1.1fr]">
       <div>
@@ -21,6 +31,14 @@ export default function ContactPage() {
         <p className="mt-6 max-w-md text-base leading-relaxed text-steel">
           Name the site, the app, the mast, the feed, the offer. I reply if I am the one to build it.
         </p>
+        {piece ? (
+          <p className="mt-6 max-w-md text-sm leading-relaxed text-steel">
+            From the portfolio:{" "}
+            <Link href={`/work/${piece.slug}`} className="text-paper hover:text-cyan">
+              {piece.title}
+            </Link>
+          </p>
+        ) : null}
         <p className="mt-4 max-w-md text-sm leading-relaxed text-steel">
           Work starts after a commercial agreement. I do not book free calls to pick a brain.
         </p>
